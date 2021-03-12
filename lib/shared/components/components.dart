@@ -56,3 +56,9 @@ void navigateTo(context, widget) => Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => widget),
     );
+
+Widget buildSeparator () =>Container(
+  height: 1.0,
+  width: double.infinity,
+  color: Colors.grey,
+);
