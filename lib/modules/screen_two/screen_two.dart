@@ -67,7 +67,7 @@ class ScreenTwo extends StatelessWidget {
   Widget buildItem(userModel) =>
       InkWell(
         onTap: () {
-          
+
         },
         child: Padding(
           padding: EdgeInsets.all(20.0),
