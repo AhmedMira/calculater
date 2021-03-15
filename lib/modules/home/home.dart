@@ -1,3 +1,4 @@
+import 'package:Calculater/modules/db/WaitDb.dart';
 import 'package:Calculater/modules/screen_two/screen_two.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -22,59 +23,81 @@ class HomeScreen extends StatelessWidget {
           'Home',
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            defaultFormField(
-              controller: emailController,
-              hint: 'enter email',
-              type: TextInputType.emailAddress,
-            ),
-            SizedBox(
-              height: 10.0,
-            ),
-            defaultFormField(
-              controller: userNameController,
-              hint: 'enter userName',
-              type: TextInputType.name,
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            defaultFormField(
-              controller: phoneNumberController,
-              hint: 'phone number',
-              type: TextInputType.phone,
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            defaultFormField(
-              controller: passController,
-              hint: 'password',
-              type: TextInputType.visiblePassword,
-              pass: true,
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            defaultButton(
-              text: 'screen two',
-              function: () {
-                Toast.show(
-                  "Welcome To our App",
-                  context,
-                  duration: Toast.LENGTH_LONG,
-                  gravity: Toast.BOTTOM,
-                );
-                navigateTo(
-                  context,
-                  ScreenTwo(),
-                );
-              },
-            ),
-          ],
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            children: [
+              defaultFormField(
+                controller: emailController,
+                hint: 'enter email',
+                type: TextInputType.emailAddress,
+              ),
+              SizedBox(
+                height: 10.0,
+              ),
+              defaultFormField(
+                controller: userNameController,
+                hint: 'enter userName',
+                type: TextInputType.name,
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              defaultFormField(
+                controller: phoneNumberController,
+                hint: 'phone number',
+                type: TextInputType.phone,
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              defaultFormField(
+                controller: passController,
+                hint: 'password',
+                type: TextInputType.visiblePassword,
+                pass: true,
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              defaultButton(
+                text: 'screen two',
+                function: () {
+                  Toast.show(
+                    "Welcome To our App",
+                    context,
+                    duration: Toast.LENGTH_LONG,
+                    gravity: Toast.BOTTOM,
+                  );
+                  navigateTo(
+                    context,
+                    ScreenTwo(),
+                  );
+                },
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              defaultButton(
+                isUpper: false,
+                text: 'dbScreen',
+                function: () {
+                  Toast.show(
+                    "Welcome To our App",
+                    context,
+                    duration: Toast.LENGTH_LONG,
+                    gravity: Toast.BOTTOM,
+                  );
+                  navigateTo(
+                    context,
+                    WaitDb(),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
